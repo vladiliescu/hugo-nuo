@@ -124,8 +124,7 @@
 <link rel="preload" href="{{ $style.RelPermalink }}" as="style">
 <!-- FontAwesome is not preloaded because we use integrity and https://bugs.chromium.org/p/chromium/issues/detail?id=677022  -->
 {{ with .Site.Params.customStyle }}<link rel="preload" href="{{ $customStyle.RelPermalink }}" as="style">{{ end }}
-<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster" as="style">
-<link rel="preload" href="https://fonts.googleapis.com/css?family=Roboto" as="style">
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Lobster|Amaranth|Source Sans Pro" as="style">
 <link rel="preload" href="{{ $avatar.RelPermalink }}" as="image">
 <link rel="preload" href="{{ $bg.RelPermalink }}" as="image">
 
@@ -140,8 +139,7 @@
 <link rel="stylesheet" href="{{ $fontAwesome }}" {{ printf "integrity=%q" $fontAwesomeIntegrity | safeHTMLAttr }} crossorigin="anonymous">
 {{ end }}
 {{ with .Site.Params.customStyle }}<link rel="stylesheet" href="{{ $customStyle.RelPermalink }}">{{ end }}
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" >
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster|Amaranth|Source Sans Pro">
 
 <!-- Medium Zoom -->
 {{ if and (eq .Kind "page") (eq .Type "post") }}
