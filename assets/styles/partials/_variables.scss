@@ -10,13 +10,13 @@ $grey-lighter: rgb(219, 219, 219);
 $white-ter: rgb(244, 243, 241);
 $white-bis: rgb(250, 250, 250);
 $white: rgb(255, 255, 255);
-$green: rgb(0, 171, 107);
-$green-light: rgba(0, 171, 107, 0.5);
-$green-invert: $green;
+$primary-color: rgb(0, 105, 184);
+$primary-color-light: rgba(0, 105, 184, 0.5);
+$primary-color-invert: $primary-color;
 
 /* Theme colors */
-$primary: $green;
-$primary-invert: $green-invert;
+$primary: $primary-color;
+$primary-invert: $primary-color-invert;
 $light: $white-ter;
 $dark: $grey-darker;
 $background: $white-ter;
