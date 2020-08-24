@@ -29,7 +29,8 @@
   margin: 1rem auto;
 
   @media screen and (max-width: $tablet) {
-    margin-top: 3rem;
+    // margin-top: 3rem;
+    margin: 0;
   }
 }
 
