@@ -1,13 +1,12 @@
 <!-- Site & Page Meta Data -->
 {{- $gohugoio := "gohugoio" -}}
-{{- $themeColor := "#02b875" -}}
+{{- $themeColor := "#0069b8" -}}
 {{- $favicon := "favicon.ico" -}}
 {{- $icon16 := "icons/icon-16x16.png" -}}
 {{- $icon32 := "icons/icon-32x32.png" -}}
 {{- $icon144 := "icons/icon-144x144.png" -}}
 {{- $icon152 := "icons/icon-152x152.png" -}}
 {{- $icon192 := "icons/icon-192x192.png" -}}
-{{- $manifest := "manifest.json" -}}
 {{- $bg := resources.Get (.Site.Params.bg | default "images/grey-prism.svg") -}}
 {{- $avatar := resources.Get (.Site.Params.avatar | default "images/avatar.png") -}}
 {{- $style := resources.Get "styles/main.scss" | resources.ExecuteAsTemplate "styles/main-rendered.scss" . | resources.ToCSS | resources.Minify -}}
@@ -30,35 +29,7 @@
   {{ with .Site.GoogleAnalytics }}<link href="//www.google-analytics.com" rel="dns-prefetch">{{ end }}
   {{ with .Site.Params.baidutongji }}<link href="//hm.baidu.com" rel="dns-prefetch">{{ end }}
 
-  {{ if and (eq .Kind "page") (eq .Type "post") }}
-
-  <!-- Page Author & Description -->
-  {{ with .Params.author }}<meta name="author" content="{{ . }}">{{ end }}
-  <meta name="description" content="{{ .Summary | plainify }}">
-
-  <!-- Twitter Card -->
-  {{ if isset .Params "cover" }}
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $gohugoio }}">
-    <meta name="twitter:title" content="{{ .Title }}">
-    <meta name="twitter:description" content="{{ .Summary | plainify }}">
-    <meta name="twitter:image" content="{{ .Params.cover | absURL }}">
-  {{ else }}
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $gohugoio }}">
-    <meta name="twitter:title" content="{{ .Title }}">
-    <meta name="twitter:description" content="{{ .Summary | plainify }}">
-    <meta name="twitter:image" content="{{ $avatar.RelPermalink }}">
-  {{ end }}
-
-  <!-- Facebook Open Graph -->
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="{{ .Title }}">
-  <meta property="og:description" content="{{ .Summary | plainify }}">
-  <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:image" content="{{ if isset .Params "cover" }}{{ .Params.cover | absURL }}{{ else }}{{ $avatar.RelPermalink }}{{ end }}">
-
-{{ else }}
+{{ if eq .Type "homepage" }}
 
   <!-- Site Author & Description -->
   {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
@@ -77,6 +48,32 @@
   {{ with .Site.Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
   <meta property="og:url" content="{{ .Permalink }}">
   <meta property="og:image" content="{{ $avatar.RelPermalink }}">
+
+{{ else }}
+
+  <!-- Page Author & Description -->
+  {{ with .Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  <meta name="description" content="{{ .Summary | plainify }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $gohugoio }}">
+  <meta name="twitter:title" content="{{ .Title }}">
+  <meta name="twitter:description" content="{{ .Summary | plainify }}">
+  {{ if isset .Params "cover" }}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ .Params.cover | absURL }}">
+  {{ else }}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:image" content="{{ $avatar.RelPermalink }}">
+  {{ end }}
+
+  <!-- Facebook Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:description" content="{{ .Summary | plainify }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ if isset .Params "cover" }}{{ .Params.cover | absURL }}{{ else }}{{ $avatar.RelPermalink }}{{ end }}">
+
 
 {{ end }}
 
@@ -118,7 +115,6 @@
 <link rel="icon" type="image/png" sizes="32x32" href="{{ $icon32 | relURL }}">
 <link rel="icon" sizes="192x192" href="{{ $icon192 | relURL }}">
 <link rel="apple-touch-icon" href="{{ $icon152 | relURL }}">
-<link rel="manifest" href="{{ $manifest | relURL }}">
 
 <!-- Preload -->
 <link rel="preload" href="{{ $style.RelPermalink }}" as="style">
