@@ -107,7 +107,7 @@ can choose to use [FontAwesome](https://fontawesome.com/) instead by adding
 
 **SEO**
 
-The hugo-nuo theme support [Google](https://www.google.com/webmasters/), [Bing](https://www.bing.com/toolbox/webmaster/), [Baidu](https://zhanzhang.baidu.com/), [Sogou](http://zhanzhang.sogou.com/), [360](http://zhanzhang.so.com/) webmaster's meta verification tool, you can activate as required. The `seotitle` and `description` will show in search results and browser title.
+The hugo-nuo theme supports [Google](https://www.google.com/webmasters/) and [Bing](https://www.bing.com/toolbox/webmaster/) webmasters tools, you can activate as required. The `seotitle` and `description` will show in search results and browser title.
 
 ```toml
 [params]
@@ -122,36 +122,21 @@ The hugo-nuo theme support [Google](https://www.google.com/webmasters/), [Bing](
   # https://www.bing.com/toolbox/webmaster/
   msValidate = "bing_site_verification_code"
 
-  # Baidu Webmaster (China Only)
-  # https://zhanzhang.baidu.com/
-  # baiduSiteVerification = "baidu_site_verification_code"
-
-  # Sogou Webmaster (China Only)
-  # http://zhanzhang.sogou.com/
-  # sogouSiteVerification = "sogou_site_verification_code"
-
-  # 360 Webmaster (China Only)
-  # http://zhanzhang.so.com/
-  # soSiteVerification = "360_site_verification_code"
 ```
 
 **Website Analytics**
 
-The hugo-nuo theme support [Google Analytics](https://www.google.com/analytics/) and [Baidu Tongji](https://tongji.baidu.com/), In China you can choose both Baidu Tongji and Google Analytics.
+The hugo-nuo theme supports [Google Analytics](https://www.google.com/analytics/).
 
 ```toml
 # Google Analytics UA number
 googleAnalytics = "UA-XXXXXXXX-X"
 
-[params]
-  # Baidu Tongji (China Only)
-  # https://tongji.baidu.com/
-  baiduTongji = "baidu_tongji_code"
 ```
 
 **Social Comments**
 
-The hugo-nuo theme support [Disqus](https://disqus.com/) and [Chang Yan](https://changyan.kuaizhan.com/) social comment system, In China you can choose Chang Yan because Disqus is blocked by GFW.
+The hugo-nuo theme supports [Disqus](https://disqus.com/) and [Chang Yan](https://changyan.kuaizhan.com/) social comment system, In China you can choose Chang Yan because Disqus is blocked by GFW.
 
 ```toml
 # Disqus Username
