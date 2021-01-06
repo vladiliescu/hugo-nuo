@@ -65,9 +65,8 @@ window.addEventListener('scroll', function() {
   ticking = true;
 });
 
-// Smooth Scroll to top when click toTopBtn
-var scroll = new SmoothScroll('a[href*="#"]');
+// scroll to top when clicking toTopBtn
 toTopBtn &&
   toTopBtn.addEventListener('click', function() {
-    scroll.animateScroll(0);
+    window.scrollTo(0, 0);
   });

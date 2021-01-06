@@ -360,7 +360,6 @@ Now enter [localhost:1313](http://localhost:1313) in the address bar of your bro
 - [Medium Zoom](https://medium-zoom.francoischalifour.com/)
 - [Video.js](http://videojs.com/)
 - [MathJax](https://www.mathjax.org/)
-- [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
 - [jsDelivr](https://www.jsdelivr.com/)
 
 Also thanks to [Steve Francia](https://github.com/spf13) for creating [Hugo](https://gohugo.io/) and the awesome community around the project.
