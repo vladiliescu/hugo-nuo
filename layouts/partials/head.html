@@ -36,14 +36,14 @@
   <meta name="twitter:site" content="@{{ .Site.Params.twitter | default $gohugoio }}">
   <meta name="twitter:title" content="{{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}">
   {{ with .Site.Params.description }}<meta name="twitter:description" content="{{ . }}">{{ end }}
-  <meta name="twitter:image" content="{{ $avatar.RelPermalink }}">
+  <meta name="twitter:image" content="{{ $avatar.Permalink }}">
 
   <!-- Facebook Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ if isset .Site.Params "seotitle" }}{{ .Site.Params.seotitle }}{{ else }}{{ .Site.Title }}{{ end }}">
   {{ with .Site.Params.description }}<meta property="og:description" content="{{ . }}">{{ end }}
   <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:image" content="{{ $avatar.RelPermalink }}">
+  <meta property="og:image" content="{{ $avatar.Permalink }}">
 
 {{ else }}
 
@@ -60,7 +60,7 @@
   <meta name="twitter:image" content="{{ .Params.cover | absURL }}">
   {{ else }}
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:image" content="{{ $avatar.RelPermalink }}">
+  <meta name="twitter:image" content="{{ $avatar.Permalink }}">
   {{ end }}
 
   <!-- Facebook Open Graph -->
@@ -68,7 +68,7 @@
   <meta property="og:title" content="{{ .Title }}">
   <meta property="og:description" content="{{ .Summary | plainify }}">
   <meta property="og:url" content="{{ .Permalink }}">
-  <meta property="og:image" content="{{ if isset .Params "cover" }}{{ .Params.cover | absURL }}{{ else }}{{ $avatar.RelPermalink }}{{ end }}">
+  <meta property="og:image" content="{{ if isset .Params "cover" }}{{ .Params.cover | absURL }}{{ else }}{{ $avatar.Permalink }}{{ end }}">
 
 
 {{ end }}
