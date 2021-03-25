@@ -109,15 +109,14 @@
 <link rel="icon" sizes="192x192" href="{{ $icon192 | relURL }}">
 <link rel="apple-touch-icon" href="{{ $icon152 | relURL }}">
 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Serif:wght@700&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+
 <!-- Preload -->
 <link rel="preload" href="{{ $style.RelPermalink }}" as="style">
 <!-- FontAwesome is not preloaded because we use integrity and https://bugs.chromium.org/p/chromium/issues/detail?id=677022  -->
 {{ with .Site.Params.customStyle }}<link rel="preload" href="{{ $customStyle.RelPermalink }}" as="style">{{ end }}
 <link rel="preload" href="{{ $avatar.RelPermalink }}" as="image">
-
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="preload" as="style">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="preload" as="style">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400&display=swap" rel="preload" as="style">
 
 <!-- Main Styles -->
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
@@ -125,9 +124,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 {{ end }}
 {{ with .Site.Params.customStyle }}<link rel="stylesheet" href="{{ $customStyle.RelPermalink }}">{{ end }}
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400&display=swap" rel="stylesheet">
 
 <!-- Medium Zoom -->
 {{ if and (eq .Kind "page") (eq .Type "post") }}
